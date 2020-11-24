@@ -3,7 +3,7 @@ About r-blockfest
 
 Home: https://CRAN.R-project.org/package=BlockFeST
 
-Package license: GPL-2
+Package license: GPL-2.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-blockfest-feedstock/blob/master/LICENSE.txt)
 
