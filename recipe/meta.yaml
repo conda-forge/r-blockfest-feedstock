@@ -1,4 +1,4 @@
-{% set version = "1.8" %}
+{% set version = "2.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/BlockFeST_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/BlockFeST/BlockFeST_{{ version }}.tar.gz
-  sha256: a5ebaf1d3ddbe8ce7eaed6ce41bc8a20afdc4e0b2dd9fc9338927e8d5fcd8b89
+  sha256: c5dcc9bb3d57d5a7b9eaf7283acccd854ed1dc68071db9b0fd093816981f94b9
 
 build:
   merge_build_host: true  # [win]
