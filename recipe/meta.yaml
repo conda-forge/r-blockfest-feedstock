@@ -1,6 +1,5 @@
 {% set version = "2.0" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-blockfest
@@ -13,8 +12,7 @@ source:
   sha256: c5dcc9bb3d57d5a7b9eaf7283acccd854ed1dc68071db9b0fd093816981f94b9
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -33,7 +33,6 @@ requirements:
     - r-basix
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-basix
 
 test:
